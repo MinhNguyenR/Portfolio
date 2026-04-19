@@ -2996,98 +2996,74 @@ code, pre {
 
   .navbar-links button, 
   .navbar-links a {
-    font-size: 1.2rem !important;
-    width: 100%;
-    text-align: center;
+    font-size: 1.1rem !important;
+    padding: 1rem !important;
   }
 
-  .lang-switcher {
-    margin-top: 3rem;
-    margin-left: 0 !important;
-    display: flex;
-    gap: 10px;
-    background: rgba(59,130,246,0.1);
-    padding: 4px;
-    border-radius: var(--radius-full);
-  }
-
-  .lang-switcher button {
-    padding: 6px 12px !important;
-    font-size: 0.85rem !important;
-  }
-
+  /* Tận dụng tối đa chiều ngang */
   .section {
-    padding: 3rem 1rem !important;
+    padding: 2rem 0.6rem !important; /* Chỉ để 10px lề */
+    max-width: 100% !important;
   }
 
   .preview-grid, .vault-grid {
     grid-template-columns: 1fr !important;
+    gap: 0.8rem !important; /* Khít các card lại */
   }
 
-  .hero-section {
-    padding-top: 4rem;
+  .content-card {
+    padding: 1rem !important; /* Nén card dự án */
   }
 
-  .hero-name {
-    font-size: 2.22rem !important;
+  .card-title {
+    font-size: 1.1rem !important;
   }
 
-  .hero-stats {
-    gap: 1rem !important;
-  }
-
-  .hero-stat-number {
-    font-size: 1.8rem !important;
-  }
-
-  .detail-page, .vault-page {
-    padding: 1rem !important;
-  }
-
-  .detail-header {
-    padding: 1rem 0 !important;
-  }
-
-  /* Timeline Mobile - Làm gọn lại */
+  /* Timeline Mobile - Tràn lề */
   .timeline-container {
-    padding: 1rem 0 !important;
-    position: relative;
-  }
-
-  .timeline-line {
-    left: 15px !important;
-    transform: none !important;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-  }
-
-  .timeline-dot {
-    left: 15px !important;
-    transform: translateX(-50%) !important;
-    position: absolute;
-    top: 1.5rem;
-    z-index: 2;
+    padding: 0.5rem 0 !important;
+    max-width: 100% !important;
   }
 
   .timeline-item {
-    margin-bottom: 2rem !important; /* Giảm khoảng cách giữa các mốc */
-    padding-left: 35px !important;
+    padding-left: 28px !important; /* Sát lề hơn nữa */
+    margin-bottom: 1.2rem !important;
   }
 
-  .timeline-card {
-    padding: 1rem !important; /* Nén card lại */
+  .timeline-line {
+    left: 10px !important;
   }
 
-  .timeline-card-title {
-    font-size: 1rem !important;
+  .timeline-dot {
+    left: 10px !important;
+    top: 1.2rem !important;
   }
 
-  .timeline-card-desc {
-    font-size: 0.85rem !important;
-    line-height: 1.4 !important;
+  .sidebar { display: none !important; }
+  .main-content { padding-left: 0 !important; }
+
+  /* Chat Box Mobile - Mini Mode */
+  .chatbox {
+    width: calc(100% - 20px) !important;
+    left: 10px !important;
+    right: 10px !important;
+    bottom: 80px !important;
+    max-height: 50vh !important; /* Chỉ chiếm tối đa nửa màn hình */
   }
+
+  .chatbox-messages {
+    max-height: 35vh !important;
+  }
+  
+  .hero-name {
+    font-size: 1.8rem !important;
+  }
+
+  .hero-avatar {
+    width: 120px !important;
+    height: 120px !important;
+  }
+}
 
   /* Contact Mobile */
   .contact-grid {
