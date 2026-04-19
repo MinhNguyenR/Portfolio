@@ -183,6 +183,11 @@ app.get('/api/branding/hachiware/:variant', async (req, res) => {
   }
 });
 
+// Root route for health check & verification
+app.get('/', (req, res) => {
+  res.send('🚀 Portfolio API is running! Access the profile via /api/profile');
+});
+
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
