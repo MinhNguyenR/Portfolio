@@ -62,6 +62,14 @@ const trackLimiter = rateLimit({
 app.use(tracker);
 
 // Routes
+app.get('/', (req, res) => {
+  res.send('🚀 Portfolio API is running! Access the profile via /api/profile');
+});
+
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
 app.use('/api/analytics', require('./routes/analyticsRoutes'));
 app.use('/api/contact',   require('./routes/contactRoutes'));
 app.use('/api/content',   require('./routes/contentRoutes'));
@@ -170,16 +178,6 @@ app.get('/api/branding/hachiware/:variant', async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: 'Server error' });
   }
-});
-
-// Root route for health check & verification
-app.get('/', (req, res) => {
-  res.send('🚀 Portfolio API is running! Access the profile via /api/profile');
-});
-
-// Health check
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
 // Error handler
