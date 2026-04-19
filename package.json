@@ -1,0 +1,19 @@
+{
+  "name": "portfolio-app",
+  "version": "1.0.0",
+  "description": "[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/) [![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/) [![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/) [![OpenRouter](https://img.shields.io/badge/OpenRouter-AI-blue?style=for-the-badge)](https://openrouter.ai/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MinhNguyenR/Portfolio.git"
+  },
+  "author": "MinhNguyenR",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MinhNguyenR/Portfolio/issues"
+  },
+  "homepage": "https://github.com/MinhNguyenR/Portfolio#readme"
+}
