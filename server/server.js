@@ -10,17 +10,22 @@ const tracker = require('./middleware/tracker');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// 1. CORS PHẢI Ở ĐẦU TIÊN
+app.use(cors({ 
+  origin: function (origin, callback) {
+    callback(null, true);
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept']
+}));
+
 // Connect to MongoDB
 connectDB();
 
 // Security & middleware
-app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
+// app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
 
-// Mở CORS hoàn toàn để tránh bị chặn trên Render
-app.use(cors({ 
-  origin: true,
-  credentials: true 
-}));
 app.use(morgan('dev'));
 app.use(express.json({ limit: '5mb' }));
 app.use(express.urlencoded({ extended: true }));
