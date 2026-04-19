@@ -3042,19 +3042,7 @@ code, pre {
   .sidebar { display: none !important; }
   .main-content { padding-left: 0 !important; }
 
-  /* Chat Box Mobile - Mini Mode */
-  .chatbox {
-    width: calc(100% - 20px) !important;
-    left: 10px !important;
-    right: 10px !important;
-    bottom: 80px !important;
-    max-height: 50vh !important; /* Chỉ chiếm tối đa nửa màn hình */
-  }
-
-  .chatbox-messages {
-    max-height: 35vh !important;
-  }
-  
+  /* Hero Section Mobile */
   .hero-name {
     font-size: 1.8rem !important;
   }
@@ -3063,7 +3051,6 @@ code, pre {
     width: 120px !important;
     height: 120px !important;
   }
-}
 
   /* Contact Mobile */
   .contact-grid {
@@ -3075,21 +3062,21 @@ code, pre {
     width: 100%;
   }
 
-  /* Chat Box Mobile */
+  /* Chat Box Mobile - Mini Mode */
   .chatbox {
-    width: calc(100% - 30px) !important;
-    left: 15px !important;
-    right: 15px !important;
-    bottom: 85px !important;
-    max-height: 400px !important; /* Giảm chiều cao khung chat */
+    width: calc(100% - 20px) !important;
+    left: 10px !important;
+    right: 10px !important;
+    bottom: 80px !important;
+    max-height: 48vh !important; /* Tối ưu chiều cao cho đa số điện thoại */
     border-radius: var(--radius-lg) !important;
   }
 
   .chatbox-messages {
-    max-height: 250px !important;
-    min-height: 150px !important;
+    max-height: 32vh !important;
+    min-height: 120px !important;
   }
-
+  
   /* Mascot Mobile */
   .mascot-corner img {
     width: 50px !important;
