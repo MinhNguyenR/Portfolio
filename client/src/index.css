@@ -3048,28 +3048,45 @@ code, pre {
     padding: 1rem 0 !important;
   }
 
-  /* Timeline Mobile */
+  /* Timeline Mobile - Làm gọn lại */
+  .timeline-container {
+    padding: 1rem 0 !important;
+    position: relative;
+  }
+
   .timeline-line {
-    left: 20px !important;
+    left: 15px !important;
     transform: none !important;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
   }
 
   .timeline-dot {
-    left: 20px !important;
+    left: 15px !important;
     transform: translateX(-50%) !important;
+    position: absolute;
+    top: 1.5rem;
+    z-index: 2;
   }
 
   .timeline-item {
-    padding-left: 45px !important;
-    padding-right: 0 !important;
-    flex-direction: row !important;
+    margin-bottom: 2rem !important; /* Giảm khoảng cách giữa các mốc */
+    padding-left: 35px !important;
   }
 
-  .timeline-item:nth-child(odd),
-  .timeline-item:nth-child(even) {
-    padding-left: 45px !important;
-    padding-right: 0 !important;
-    flex-direction: row !important;
+  .timeline-card {
+    padding: 1rem !important; /* Nén card lại */
+  }
+
+  .timeline-card-title {
+    font-size: 1rem !important;
+  }
+
+  .timeline-card-desc {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
   }
 
   /* Contact Mobile */
@@ -3084,10 +3101,28 @@ code, pre {
 
   /* Chat Box Mobile */
   .chatbox {
-    width: calc(100% - 40px) !important;
-    left: 20px !important;
-    right: 20px !important;
-    bottom: 90px !important;
+    width: calc(100% - 30px) !important;
+    left: 15px !important;
+    right: 15px !important;
+    bottom: 85px !important;
+    max-height: 400px !important; /* Giảm chiều cao khung chat */
+    border-radius: var(--radius-lg) !important;
+  }
+
+  .chatbox-messages {
+    max-height: 250px !important;
+    min-height: 150px !important;
+  }
+
+  /* Mascot Mobile */
+  .mascot-corner img {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  /* Khắc phục lỗi Navbar bị tràn chữ */
+  .navbar-links:not(.active) {
+    display: none !important;
   }
 }
 
