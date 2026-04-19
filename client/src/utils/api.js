@@ -1,8 +1,11 @@
 import axios from 'axios';
 
 const getBaseURL = () => {
-  const envUrl = import.meta.env.VITE_API_URL;
-  if (!envUrl) return 'https://portfolio-7aa9.onrender.com/api';
+  let envUrl = import.meta.env.VITE_API_URL || 'https://portfolio-7aa9.onrender.com/api';
+  // Xóa dấu gạch chéo thừa ở cuối nếu có
+  envUrl = envUrl.replace(/\/+$/, '');
+  
+  // Đảm bảo luôn kết thúc bằng /api
   return envUrl.endsWith('/api') ? envUrl : `${envUrl}/api`;
 };
 
