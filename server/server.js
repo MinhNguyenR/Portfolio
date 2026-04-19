@@ -14,22 +14,11 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // Security & middleware
-const allowedOrigins = [
-  'http://localhost:5173',
-  'http://localhost:5174',
-  'http://localhost:3000',
-  process.env.FRONTEND_URL
-].filter(Boolean);
-
 app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
+
+// Mở CORS hoàn toàn để tránh bị chặn trên Render
 app.use(cors({ 
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }, 
+  origin: true,
   credentials: true 
 }));
 app.use(morgan('dev'));
@@ -146,8 +135,8 @@ app.get('/api/profile', async (req, res) => {
       },
     });
   } catch (err) {
-    console.error('Profile fetch error:', err.message);
-    res.status(500).json({ error: 'Server error' });
+    console.error('CRITICAL Profile fetch error:', err);
+    res.status(500).json({ error: 'Server error', details: err.message });
   }
 });
 
