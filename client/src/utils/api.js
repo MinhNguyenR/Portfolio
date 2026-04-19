@@ -1,9 +1,14 @@
 import axios from 'axios';
 
+const getBaseURL = () => {
+  const envUrl = import.meta.env.VITE_API_URL;
+  if (!envUrl) return 'https://portfolio-7aa9.onrender.com/api';
+  return envUrl.endsWith('/api') ? envUrl : `${envUrl}/api`;
+};
+
 const api = axios.create({
-  // Ưu tiên biến môi trường, sau đó đến URL production bạn đã cung cấp, cuối cùng mới là path tương đối
-  baseURL: import.meta.env.VITE_API_URL || 'https://portfolio-7aa9.onrender.com/api',
-  timeout: 10000,
+  baseURL: getBaseURL(),
+  timeout: 15000,
   headers: { 'Content-Type': 'application/json' },
 });
 
